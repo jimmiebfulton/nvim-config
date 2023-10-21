@@ -75,12 +75,13 @@ return {
 				{
 					["<leader>"] = {
 						f = { name = "File" },
+						b = { name = "Buffer" },
+						j = { name = "Jump" },
 						d = { name = "Delete/Close" },
 						q = { name = "Quit" },
 						s = { name = "Search" },
 						l = { name = "LSP" },
 						u = { name = "UI" },
-						b = { name = "Buffer" },
 						g = { name = "Git" },
 					}
 				}

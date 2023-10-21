@@ -23,6 +23,13 @@ return {
             },
 					},
 				},
+        pickers = {
+          current_buffer_fuzzy_find = {
+            layout_config = {
+              prompt_position = "bottom",
+            }
+          },
+        }
 			})
 
 			-- Enable telescope fzf native, if installed
