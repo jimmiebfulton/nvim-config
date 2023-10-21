@@ -4,6 +4,26 @@ return {
 		config = function()
 			local wk = require("which-key")
 
+      local mappings = {
+					["<leader>"] = {
+						f = { name = "File" },
+						b = { 
+              name = "Buffer",
+              d = { "<cmd>bd<cr>", "Close" },
+              D = { "<cmd>bd<cr>", "Force Close" },
+            },
+						j = { name = "Jump" },
+						d = { name = "Delete/Close" },
+						q = { name = "Quit" },
+						s = { name = "Search" },
+						l = { name = "LSP" },
+						u = { name = "UI" },
+						g = { name = "Git" },
+            q = { "<cmd>q<cr>", "Quit" }
+					}
+		  }
+
+
       wk.setup{
         plugins = {
           marks = true, -- shows a list of your marks on ' and `
@@ -71,21 +91,7 @@ return {
         },
       }
 
-			wk.register(
-				{
-					["<leader>"] = {
-						f = { name = "File" },
-						b = { name = "Buffer" },
-						j = { name = "Jump" },
-						d = { name = "Delete/Close" },
-						q = { name = "Quit" },
-						s = { name = "Search" },
-						l = { name = "LSP" },
-						u = { name = "UI" },
-						g = { name = "Git" },
-					}
-				}
-			)
+			wk.register(mappings)
 		end
 	}
 }

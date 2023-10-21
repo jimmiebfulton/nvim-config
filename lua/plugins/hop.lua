@@ -12,6 +12,7 @@ return {
 			map( { "n", "v" }, "<leader>jl", "<cmd>HopLine<cr>", "Line")
 			map( { "n", "v" }, "<leader>jC", "<cmd>HopChar1<cr>", "Char 1")
 			map( { "n", "v" }, "<leader>jc", "<cmd>HopChar2<cr>", "Char 2")
+			map( { "n", "v" }, "<leader>jj", "<cmd>HopChar2<cr>", "Char 2")
     end
   }
 }
