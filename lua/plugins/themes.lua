@@ -6,12 +6,10 @@ return {
       require("onedark").setup{
         style = "warmer",
         toggle_style_key = "<leader>tc",
-
-        lualine = {
-          transparent = true,
-        }
       }
       require("onedark").load()
     end
   },
+  
+  "shaunsingh/nord.nvim",
 }

@@ -18,13 +18,14 @@ return {
             d = { "<cmd>bd<cr>", "Close" },  
             D = { "<cmd>bd!<cr>", "Force Close" },  
               
-            f = { name = "File" },
+            f = { name = "Find" },
 						g = { 
               name = "Git",
               s = {
                 name = "Search",
               },
             },
+
 						j = { name = "Jump" },
 						q = { name = "Quit" },
 						s = { name = "Search" },
