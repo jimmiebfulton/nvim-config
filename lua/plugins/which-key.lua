@@ -26,7 +26,6 @@ return {
               },
             },
 						j = { name = "Jump" },
-						d = { name = "Delete/Close" },
 						q = { name = "Quit" },
 						s = { name = "Search" },
 						l = { name = "LSP" },

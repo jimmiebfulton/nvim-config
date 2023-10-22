@@ -1,5 +1,4 @@
 -- Telescope fuzzy finding (all the things)
--- Add random comment
 return {
 	{
 		"nvim-telescope/telescope.nvim",
