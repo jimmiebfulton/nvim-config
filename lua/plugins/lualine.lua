@@ -5,6 +5,7 @@ return {
 			options = {
 				icons_enabled = true,
 				theme = "powerline",
+        disabled_filetypes = { 'neo-tree' }
 			},
 		})
 	end,
