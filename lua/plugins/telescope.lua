@@ -37,13 +37,21 @@ return {
 
 			local map = require("utils.keys").map
 --			map("n", "<leader>fr", require("telescope.builtin").oldfiles, "Recently opened")
-			map("n", "<leader><space>", require("telescope.builtin").buffers, "Open buffers")
 			map("n", "<leader>bb", require("telescope.builtin").buffers, "Find")
 			map("n", "<leader>/", require("telescope.builtin").current_buffer_fuzzy_find, "Search File")
-			map("n", "<leader>ff", require("telescope.builtin").find_files, "Find")
-			map("n", "<leader>sh", require("telescope.builtin").help_tags, "Help")
-			map("n", "<leader>sw", require("telescope.builtin").grep_string, "Current word")
+			
+      map("n", "<leader><leader>f", require("telescope.builtin").find_files, "File")
+      map("n", "<leader>ff", require("telescope.builtin").find_files, "File")
 			map("n", "<leader>fg", require("telescope.builtin").live_grep, "Grep")
+			map("n", "<leader>fw", require("telescope.builtin").grep_string, "Current word")
+			
+      map("n", "<leader>gsb", require("telescope.builtin").git_branches, "Branches")
+      map("n", "<leader>gsa", require("telescope.builtin").git_commits, "Commits All")
+      map("n", "<leader>gsb", require("telescope.builtin").git_bcommits, "Commits Buffer")
+      map("n", "<leader>gss", require("telescope.builtin").git_status, "Status")
+
+
+			map("n", "<leader>sh", require("telescope.builtin").help_tags, "Help")
 			map("n", "<leader>sd", require("telescope.builtin").diagnostics, "Diagnostics")
       map("n", "<leader>sc", require("telescope.builtin").colorscheme, "Colorschemes")
 

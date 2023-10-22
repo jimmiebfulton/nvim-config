@@ -17,6 +17,10 @@ return {
 			map( { "n", "v" }, "<leader>fE", "<cmd>Neotree focus left toggle reveal<cr>", "Explore in Bar")
 			map( { "n", "v" }, "<leader>fr", "<cmd>Neotree focus left reveal<cr>", "Reveal in Bar")
 			map( { "n", "v" }, "<leader>be", "<cmd>Neotree buffers float focus reveal<cr>", "Reveal in Float")
+			
+
+      map( { "n", "v" }, "<leader>ge", "<cmd>Neotree git_status close<cr><cmd>Neotree git_status float focus<cr>", "Git Status Float")
+      map( { "n", "v" }, "<leader>gE", "<cmd>Neotree git_status left toggle<cr>", "Git Status Bar")
 		end,
 	},
 }

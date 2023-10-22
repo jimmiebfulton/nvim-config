@@ -6,12 +6,21 @@ return {
 
       local mappings = {
 					["<leader>"] = {
-						f = { name = "File" },
-						b = { 
+            ["<leader>"] = {
+              name = "Quick",
+            },
+					  b = { 
               name = "Buffer",
               d = { "<cmd>bd<cr>", "Close" },
               D = { "<cmd>bd!<cr>", "Force Close" },
               w = { "<cmd>w<cr>", "Write" },
+            },
+            f = { name = "File" },
+						g = { 
+              name = "Git",
+              s = {
+                name = "Search",
+              },
             },
 						j = { name = "Jump" },
 						d = { name = "Delete/Close" },
@@ -19,7 +28,6 @@ return {
 						s = { name = "Search" },
 						l = { name = "LSP" },
 						u = { name = "UI" },
-						g = { name = "Git" },
             t = {
               name = "Toggle",
               h = { "<cmd>nohlsearch<cr>", "Highlights" },
