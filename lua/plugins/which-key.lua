@@ -10,7 +10,8 @@ return {
 						b = { 
               name = "Buffer",
               d = { "<cmd>bd<cr>", "Close" },
-              D = { "<cmd>bd<cr>", "Force Close" },
+              D = { "<cmd>bd!<cr>", "Force Close" },
+              w = { "<cmd>w<cr>", "Write" },
             },
 						j = { name = "Jump" },
 						d = { name = "Delete/Close" },
@@ -19,7 +20,13 @@ return {
 						l = { name = "LSP" },
 						u = { name = "UI" },
 						g = { name = "Git" },
-            q = { "<cmd>q<cr>", "Quit" }
+            t = {
+              name = "Toggle",
+              h = { "<cmd>nohlsearch<cr>", "Highlights" },
+            },
+            q = { "<cmd>q<cr>", "Quit" },
+            Q = { "<cmd>qa!<cr>", "Quit All" },
+            w = { "<cmd>w<cr>", "Write" },
 					}
 		  }
 
