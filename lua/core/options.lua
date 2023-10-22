@@ -55,6 +55,3 @@ cmap <Up> <C-P>
 cmap <M-Bs> <C-W>
 ]]
 
--- Enable Alt Backespace and Alt Delete
-vim.keymap.set('i', '<M-Bs>', '<C-W>')
-vim.keymap.set('i', '<M-Del>', '<C-O>dw', { silent = true })

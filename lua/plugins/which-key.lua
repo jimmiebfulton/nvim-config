@@ -15,6 +15,9 @@ return {
               D = { "<cmd>bd!<cr>", "Force Close" },
               w = { "<cmd>w<cr>", "Write" },
             },
+            d = { "<cmd>bd<cr>", "Close" },  
+            D = { "<cmd>bd!<cr>", "Force Close" },  
+              
             f = { name = "File" },
 						g = { 
               name = "Git",
@@ -35,6 +38,7 @@ return {
             q = { "<cmd>q<cr>", "Quit" },
             Q = { "<cmd>qa!<cr>", "Quit All" },
             w = { "<cmd>w<cr>", "Write" },
+            W = { "<cmd>w<cr><cmd>bd<cr>", "Write and Close" },
 					}
 		  }
 

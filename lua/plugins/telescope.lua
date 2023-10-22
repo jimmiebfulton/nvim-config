@@ -34,6 +34,7 @@ return {
 
 			-- Enable telescope fzf native, if installed
 			pcall(require("telescope").load_extension, "fzf")
+      require("telescope").load_extension("lazygit")
 
 			local map = require("utils.keys").map
 --			map("n", "<leader>fr", require("telescope.builtin").oldfiles, "Recently opened")
@@ -45,7 +46,6 @@ return {
 			map("n", "<leader>fg", require("telescope.builtin").live_grep, "Grep")
 			map("n", "<leader>fw", require("telescope.builtin").grep_string, "Current word")
 			
-      map("n", "<leader>gsb", require("telescope.builtin").git_branches, "Branches")
       map("n", "<leader>gsa", require("telescope.builtin").git_commits, "Commits All")
       map("n", "<leader>gsb", require("telescope.builtin").git_bcommits, "Commits Buffer")
       map("n", "<leader>gss", require("telescope.builtin").git_status, "Status")
