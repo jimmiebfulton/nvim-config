@@ -37,7 +37,6 @@ return {
       require("telescope").load_extension("lazygit")
 
 			local map = require("utils.keys").map
---			map("n", "<leader>fr", require("telescope.builtin").oldfiles, "Recently opened")
 			map("n", "<leader>bb", require("telescope.builtin").buffers, "Find")
 			map("n", "<leader>/", require("telescope.builtin").current_buffer_fuzzy_find, "Search File")
 			
