@@ -35,12 +35,16 @@ return {
 				incremental_selection = {
 					enable = true,
 					keymaps = {
-						init_selection = "<c-space>",
-						node_incremental = "<c-space>",
-						scope_incremental = "<c-s>",
-						node_decremental = "<c-backspace>",
+						init_selection = "<C-Up>",
+						node_incremental = "<C-Up>",
+						scope_incremental = "<C-Right>",
+						node_decremental = "<C-Down>",
 					},
 				},
+        context_commentstring = {
+          enable = true,
+          enable_autocmd = true,
+        },
 				textobjects = {
 					select = {
 						enable = true,

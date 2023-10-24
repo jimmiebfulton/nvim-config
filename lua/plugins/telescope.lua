@@ -7,6 +7,7 @@ return {
 			"nvim-lua/plenary.nvim",
 			-- Fuzzy Finder Algorithm which requires local dependencies to be built. Only load if `make` is available
 			{ "nvim-telescope/telescope-fzf-native.nvim", build = "make", cond = vim.fn.executable("make") == 1 },
+			"nvim-tree/nvim-web-devicons",
 		},
 		config = function()
       local actions = require "telescope.actions"
@@ -42,6 +43,7 @@ return {
 			
       map("n", "<leader><leader>f", require("telescope.builtin").find_files, "File")
       map("n", "<leader>ff", require("telescope.builtin").find_files, "File")
+      map("n", "<leader>fr", require("telescope.builtin").oldfiles, "Recent")
 			map("n", "<leader>fg", require("telescope.builtin").live_grep, "Grep")
 			map("n", "<leader>fw", require("telescope.builtin").grep_string, "Current word")
 			
