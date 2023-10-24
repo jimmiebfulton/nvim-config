@@ -11,6 +11,11 @@ return {
 		config = function()
 			require("neo-tree").setup{
         close_if_last_window = true,
+        window = {
+          mappings = {
+            ["<space>"] = "none", 
+          },
+        },
       }
 			local map = require("utils.keys").map
 			map( { "n", "v" }, "<leader>fe", "<cmd>Neotree close<cr><cmd>Neotree focus float toggle reveal<cr>", "Explore in Float")

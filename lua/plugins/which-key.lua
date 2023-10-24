@@ -8,6 +8,10 @@ return {
 					["<leader>"] = {
             ["<leader>"] = {
               name = "Quick",
+              w = { "<cmd>w<cr>", "Write" },
+              W = { "<cmd>w<cr><cmd>bd<cr>", "Write and Close" },
+              d = { "<cmd>bd<cr>", "Close" },
+              D = { "<cmd>bd!<cr>", "Force Close" },
             },
 					  b = { 
               name = "Buffer",
@@ -34,11 +38,20 @@ return {
             t = {
               name = "Toggle",
               h = { "<cmd>nohlsearch<cr>", "Highlights" },
+              r = { "<cmd>set relativenumber!<cr>", "Relative" },
+            },
+            T = {
+              name = "Tools",
+              h = { "<cmd>! zellij run -f -- htop<cr>", "htop" },
+            },
+            w = {
+              name = "Window",
+              ["<Right>"] = { "<cmd>vsplit<cr>", "Split Right" },
+              ["<Down>"] = { "<cmd>split<cr>", "Split Down" }, 
+              c = { "<cmd>close<cr>", "Close" },
             },
             q = { "<cmd>q<cr>", "Quit" },
             Q = { "<cmd>qa!<cr>", "Quit All" },
-            w = { "<cmd>w<cr>", "Write" },
-            W = { "<cmd>w<cr><cmd>bd<cr>", "Write and Close" },
 					}
 		  }
 
