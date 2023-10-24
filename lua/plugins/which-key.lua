@@ -1,5 +1,5 @@
 return {
-	{
+{
 		"folke/which-key.nvim",
 		config = function()
 			local wk = require("which-key")
@@ -15,12 +15,12 @@ return {
             },
 					  b = { 
               name = "Buffer",
-              d = { "<cmd>bd<cr>", "Close" },
-              D = { "<cmd>bd!<cr>", "Force Close" },
+              d = { "<cmd>bd<cr>", "Delete" },
+              D = { "<cmd>bd!<cr>", "Force Delete" },
               w = { "<cmd>w<cr>", "Write" },
             },
-            d = { "<cmd>bd<cr>", "Close" },  
-            D = { "<cmd>bd!<cr>", "Force Close" },  
+            d = { "<cmd>bd<cr>", "Delete Buffer" },  
+            D = { "<cmd>bd!<cr>", "Force Delete Buffer" },  
               
             f = { name = "Find" },
 						g = { 
@@ -43,6 +43,11 @@ return {
             T = {
               name = "Tools",
               h = { "<cmd>! zellij run -f -- htop<cr>", "htop" },
+              l = { "<cmd>Lazy<cr>", "Lazy" }, 
+              m = {
+                name = "markdown",
+                p= { "<cmd>MarkdownPreviewToggle<cr>", "Preview Toggle" },
+              },
             },
             w = {
               name = "Window",

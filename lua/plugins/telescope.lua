@@ -37,7 +37,7 @@ return {
       require("telescope").load_extension("lazygit")
 
 			local map = require("utils.keys").map
-			map("n", "<leader>bb", require("telescope.builtin").buffers, "Find Files")
+			map("n", "<leader>bb", require("telescope.builtin").buffers, "Find Buffer")
 			map("n", "<leader>/", require("telescope.builtin").current_buffer_fuzzy_find, "Search File")
 			
       map("n", "<leader><leader>f", require("telescope.builtin").find_files, "File")
@@ -54,6 +54,8 @@ return {
 			map("n", "<leader>sd", require("telescope.builtin").diagnostics, "Diagnostics")
       map("n", "<leader>sc", require("telescope.builtin").colorscheme, "Colorschemes")
       map("n", "<leader>so", require("telescope.builtin").vim_options, "VIM Options")
+      map("n", "<leader>sr", require("telescope.builtin").resume, "Resume")
+
 
 			map("n", "<C-p>", require("telescope.builtin").keymaps, "Search keymaps")
 
