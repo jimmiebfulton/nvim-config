@@ -54,6 +54,7 @@ return {
               ["<Right>"] = { "<cmd>vsplit<cr>", "Split Right" },
               ["<Down>"] = { "<cmd>split<cr>", "Split Down" }, 
               c = { "<cmd>close<cr>", "Close" },
+              f = { "<cmd>MaximizerToggle<cr>", "Maximize" },
             },
             q = { "<cmd>q<cr>", "Quit" },
             Q = { "<cmd>qa!<cr>", "Quit All" },
