@@ -1,39 +1,30 @@
 return {
   {
-    "ggandor/lightspeed.nvim",
-    enabled = false,
+    "ggandor/lightspeed.nvim", -- https://github.com/ggandor/lightspeed.nvim
+    enabled = true,
     dependencies = {
       "tpope/vim-repeat",
     },
     config =function ()
+      local ls = require("lightspeed")
+      local keys = require("utils.keys")
+
+      ls.setup{
+      }
+
+      keys.map({"v"}, "S", "<Plug>Lightspeed_S")
     end
   },
 
   {
-      "ggandor/leap.nvim",
-      enabled = true,
-      dependencies = {
-        "tpope/vim-repeat",
-      },
-      config = function ()
-        local leap = require("leap")
-        leap.add_default_mappings()
-      end
-  },
-
-  {
-   "justinmk/vim-sneak",
-    dependencies = {
-      "repeat.nvim",
-    },
+    "ggandor/leap.nvim",
     enabled = false,
+    dependencies = {
+      "tpope/vim-repeat",
+    },
     config = function ()
-      local keys = require("utils.keys")
-      keys.map({"n"}, "f", "<Plug>Sneak_f")
-      keys.map({"n"}, "F", "<Plug>Sneak_F")
-      keys.map({"n"}, "t", "<Plug>Sneak_t")
-      keys.map({"n"}, "T", "<Plug>Sneak_T")
-      vim.cmd "let g:sneak#s_next = 1"
-    end,
-  }
+      local leap = require("leap")
+      leap.add_default_mappings()
+    end
+  },
 }

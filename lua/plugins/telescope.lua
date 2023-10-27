@@ -16,11 +16,15 @@ return {
 				defaults = {
 					mappings = {
 						i = {
-							--["<C-u>"] = false,
-							--["<C-d>"] = false,
+              ["<C-Up>"] = actions.preview_scrolling_up,
+              ["<C-Down>"] = actions.preview_scrolling_down,
+              ["<C-h>"] = "which_key",
 						},
             n = {
+              ["<C-Up>"] = actions.preview_scrolling_up,
+              ["<C-Down>"] = actions.preview_scrolling_down,
               ["q"] = actions.close,
+              ["<C-h>"] = "which_key",
             },
 					},
 				},

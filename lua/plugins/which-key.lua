@@ -53,6 +53,7 @@ return {
               ["<Down>"] = { "<cmd>split<cr>", "Split Down" },
               c = { "<cmd>close<cr>", "Close" },
               f = { "<cmd>MaximizerToggle<cr>", "Maximize" },
+              o = { "<cmd>only<cr>", "Only" },
             },
             q = { "<cmd>q<cr>", "Quit" },
             Q = { "<cmd>qa!<cr>", "Quit All" },
@@ -66,7 +67,7 @@ return {
           registers = true, -- shows your registers on " in NORMAL or <C-r> in INSERT mode
           spelling = {
             enabled = false, -- enabling this will show WhichKey when pressing z= to select spelling suggestions
-            suggestions = 20, -- how many suggestions should be shown in the list?
+            suggestions = 40, -- how many suggestions should be shown in the list?
           },
           -- the presets plugin, adds help for a bunch of default keybindings in Neovim
           -- No actual key bindings are created
