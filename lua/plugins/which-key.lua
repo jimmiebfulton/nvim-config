@@ -13,17 +13,16 @@ return {
               d = { "<cmd>bd<cr>", "Close" },
               D = { "<cmd>bd!<cr>", "Force Close" },
             },
-					  b = { 
+					  b = {
               name = "Buffer",
               d = { "<cmd>bd<cr>", "Delete" },
               D = { "<cmd>bd!<cr>", "Force Delete" },
               w = { "<cmd>w<cr>", "Write" },
             },
-            d = { "<cmd>bd<cr>", "Delete Buffer" },  
-            D = { "<cmd>bd!<cr>", "Force Delete Buffer" },  
-              
+            d = { "<cmd>bd<cr>", "Delete Buffer" },
+            D = { "<cmd>bd!<cr>", "Force Delete Buffer" },
             f = { name = "Find" },
-						g = { 
+						g = {
               name = "Git",
               s = {
                 name = "Search",
@@ -31,7 +30,6 @@ return {
             },
 
 						j = { name = "Jump" },
-						q = { name = "Quit" },
 						s = { name = "Search" },
 						l = { name = "LSP" },
 						u = { name = "UI" },
@@ -43,7 +41,7 @@ return {
             T = {
               name = "Tools",
               h = { "<cmd>! zellij run -f -- htop<cr>", "htop" },
-              l = { "<cmd>Lazy<cr>", "Lazy" }, 
+              l = { "<cmd>Lazy<cr>", "Lazy" },
               m = {
                 name = "markdown",
                 p= { "<cmd>MarkdownPreviewToggle<cr>", "Preview Toggle" },
@@ -52,7 +50,7 @@ return {
             w = {
               name = "Window",
               ["<Right>"] = { "<cmd>vsplit<cr>", "Split Right" },
-              ["<Down>"] = { "<cmd>split<cr>", "Split Down" }, 
+              ["<Down>"] = { "<cmd>split<cr>", "Split Down" },
               c = { "<cmd>close<cr>", "Close" },
               f = { "<cmd>MaximizerToggle<cr>", "Maximize" },
             },
