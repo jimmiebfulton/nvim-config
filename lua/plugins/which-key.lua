@@ -28,6 +28,10 @@ return {
                 name = "Search",
               },
             },
+            h = {
+              name = "Help",
+              p = { "<cmd>h rtp<cr>", "Path Report" },
+            },
 
 						j = { name = "Jump" },
 						s = { name = "Search" },
@@ -49,8 +53,14 @@ return {
             },
             w = {
               name = "Window",
-              ["<Right>"] = { "<cmd>vsplit<cr>", "Split Right" },
+              ["<C-Up>"] = { "<cmd>to split<cr>", "Split to Top" },
+              ["<C-Down>"] = { "<cmd>bo split<cr>", "Split to Bottom" },
+              ["<C-Left>"] = { "<cmd>to vsplit<cr>", "Split Left" },
+              ["<C-Right>"] = { "<cmd>bo vsplit<cr>", "Split Right" },
+              ["<Up>"] = { "<cmd>leftabove split<cr>", "Split Up" },
               ["<Down>"] = { "<cmd>split<cr>", "Split Down" },
+              ["<Left>"] = { "<cmd>leftabove vsplit<cr>", "Split to Left" },
+              ["<Right>"] = { "<cmd>vsplit<cr>", "Split to Right" },
               c = { "<cmd>close<cr>", "Close" },
               f = { "<cmd>MaximizerToggle<cr>", "Maximize" },
               o = { "<cmd>only<cr>", "Only" },
