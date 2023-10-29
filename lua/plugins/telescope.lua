@@ -47,7 +47,7 @@ return {
 
       map("n", "<leader><leader>f", require("telescope.builtin").find_files, "File")
       map("n", "<leader>ff", require("telescope.builtin").find_files, "File")
-      map("n", "<leader>fr", require("telescope.builtin").oldfiles, "Recent")
+      map("n", "<leader>fR", require("telescope.builtin").oldfiles, "Recent")
 			map("n", "<leader>fg", require("telescope.builtin").live_grep, "Grep")
 			map("n", "<leader>fw", require("telescope.builtin").grep_string, "Current word")
 
