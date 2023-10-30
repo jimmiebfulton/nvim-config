@@ -18,6 +18,8 @@ return {
               d = { "<cmd>bd<cr>", "Delete" },
               D = { "<cmd>bd!<cr>", "Force Delete" },
               w = { "<cmd>w<cr>", "Write" },
+              n = { "<cmd>enew<cr>", "New" },
+              r = { "<cmd>edit!<cr>", "Revert" },
             },
             d = { "<cmd>bd<cr>", "Delete Buffer" },
             D = { "<cmd>bd!<cr>", "Force Delete Buffer" },
@@ -34,7 +36,7 @@ return {
             },
 
 						j = { name = "Jump" },
-						s = { name = "Search" },
+						s = { name = "Search/Show" },
 						l = { name = "LSP" },
 						u = { name = "UI" },
             t = {
@@ -61,7 +63,7 @@ return {
               ["<Down>"] = { "<cmd>split<cr>", "Split Down" },
               ["<Left>"] = { "<cmd>leftabove vsplit<cr>", "Split to Left" },
               ["<Right>"] = { "<cmd>vsplit<cr>", "Split to Right" },
-              c = { "<cmd>close<cr>", "Close" },
+              d = { "<cmd>close<cr>", "Delete Window" },
               f = { "<cmd>MaximizerToggle<cr>", "Maximize" },
               o = { "<cmd>only<cr>", "Only" },
             },

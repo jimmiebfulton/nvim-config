@@ -1,3 +1,6 @@
+
+
+
 -- Telescope fuzzy finding (all the things)
 return {
 	{
@@ -7,64 +10,88 @@ return {
 			"nvim-lua/plenary.nvim",
 			-- Fuzzy Finder Algorithm which requires local dependencies to be built. Only load if `make` is available
 			{ "nvim-telescope/telescope-fzf-native.nvim", build = "make", cond = vim.fn.executable("make") == 1 },
+      "stevearc/aerial.nvim",
+      "ahmedkhalf/project.nvim",
 			"nvim-tree/nvim-web-devicons",
+      "debugloop/telescope-undo.nvim",
 		},
-		config = function()
-      local actions = require "telescope.actions"
+    keys = {
+      { "<leader>bb", "<cmd>Telescope buffers<cr>", { desc = "Find Buffers" }},
+      { "<leader>/", "cmd>Telescope current_buffer_fuzzy_find<cr>", { desc = "Search File" }},
 
-			require("telescope").setup({
-				defaults = {
-					mappings = {
-						i = {
-              ["<C-Up>"] = actions.preview_scrolling_up,
-              ["<C-Down>"] = actions.preview_scrolling_down,
-              ["<C-h>"] = "which_key",
-						},
-            n = {
-              ["<C-Up>"] = actions.preview_scrolling_up,
-              ["<C-Down>"] = actions.preview_scrolling_down,
-              ["q"] = actions.close,
+      { "<leader><leader>f", "<cmd>Telescope find_files<cr>", { desc = "File" }},
+      { "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "File" }},
+      { "<leader>fR", "<cmd>Telescope oldfiles<cr>", { desc = "Recent" }},
+			{ "<leader>fg", "<cmd>Telescope live_grep<cr>", { desc = "Grep" }},
+      { "<leader>fw", "<cmd>Telescope grep_string<cr>", { desc = "Current word" }},
+
+      { "<leader>gsa", "<cmd>Telescope git_commits<cr>", { desc = "Commits All" }},
+      { "<leader>gsb", "<cmd>Telescope git_bcommits<cr>", { desc = "Commits Buffer" }},
+      { "<leader>gss", "<cmd>Telescope git_status<cr>", { desc = "Status" }},
+
+
+      { "<leader>sh", "<cmd>Telescope help_tags<cr>", { desc = "Help" }},
+      { "<leader>sd", "<cmd>Telescope diagnostics<cr>", { desc = "Diagnostics" }},
+      { "<leader>sc", "<cmd>Telescope colorscheme<cr>", { desc = "Colorschemes" }},
+      { "<leader>so", "<cmd>Telescope vim_options<cr>", { desc = "VIM Options" }},
+      { "<leader>sr", "<cmd>Telescope resume<cr>", { desc = "Resume" }},
+
+      { "<leader>su", "<cmd>Telescope undo<cr>", { desc = "Undo" }},
+
+      { "<C-p>", "<cmd>Telescope keymaps<cr>", { desc = "Search keymaps" }},
+    },
+    config = function()
+      local opts = {
+        defaults = {
+          mappings = {
+            i = {
+              ["<C-Up>"] = function() require("telescope.actions").preview_scrolling_up() end,
+              ["<C-Down>"] = function() require("telescope.actions").preview_scrolling_down() end,
               ["<C-h>"] = "which_key",
             },
-					},
-				},
+            n = {
+              ["<C-Up>"] = function() require("telescope.actions").preview_scrolling_up() end,
+              ["<C-Down>"] = function() require("telescope.actionsg").preview_scrolling_down() end,
+              ["q"] = function() require("telescope.actions").close() end,
+              ["<C-h>"] = "which_key",
+            },
+          },
+        },
         pickers = {
           current_buffer_fuzzy_find = {
             layout_config = {
               prompt_position = "bottom",
             }
           },
+        },
+        extensions = {
+          undo = {
+            use_delta=true,
+            layout_strategy="vertical",
+            layout_config = {
+              preview_height = 0.6,
+            },
+            mappings = {
+              i = {
+                -- IMPORTANT: Note that telescope-undo must be available when telescope is configured if
+                -- you want to replicate these defaults and use the following actions. This means
+                -- installing as a dependency of telescope in it's `requirements` and loading this
+                -- extension from there instead of having the separate plugin definition as outlined
+                -- above.
+                ["<cr>"] = require("telescope-undo.actions").restore,
+                ["<S-cr>"] = require("telescope-undo.actions").yank_deletions,
+                ["<C-r>"] = require("telescope-undo.actions").yank_additions,
+              },
+            },
+          },
         }
-			})
-
-			-- Enable telescope fzf native, if installed
-			pcall(require("telescope").load_extension, "fzf")
+      }
+      require("telescope").setup(opts)
+      require("telescope").load_extension("fzf")
+      require("telescope").load_extension("aerial")
+      require("telescope").load_extension("projects")
       require("telescope").load_extension("lazygit")
-
-			local map = require("utils.keys").map
-			map("n", "<leader>bb", require("telescope.builtin").buffers, "Find Buffer")
-			map("n", "<leader>/", require("telescope.builtin").current_buffer_fuzzy_find, "Search File")
-
-      map("n", "<leader><leader>f", require("telescope.builtin").find_files, "File")
-      map("n", "<leader>ff", require("telescope.builtin").find_files, "File")
-      map("n", "<leader>fR", require("telescope.builtin").oldfiles, "Recent")
-			map("n", "<leader>fg", require("telescope.builtin").live_grep, "Grep")
-			map("n", "<leader>fw", require("telescope.builtin").grep_string, "Current word")
-
-      map("n", "<leader>gsa", require("telescope.builtin").git_commits, "Commits All")
-      map("n", "<leader>gsb", require("telescope.builtin").git_bcommits, "Commits Buffer")
-      map("n", "<leader>gss", require("telescope.builtin").git_status, "Status")
-
-
-			map("n", "<leader>sh", require("telescope.builtin").help_tags, "Help")
-			map("n", "<leader>sd", require("telescope.builtin").diagnostics, "Diagnostics")
-      map("n", "<leader>sc", require("telescope.builtin").colorscheme, "Colorschemes")
-      map("n", "<leader>so", require("telescope.builtin").vim_options, "VIM Options")
-      map("n", "<leader>sr", require("telescope.builtin").resume, "Resume")
-
-
-			map("n", "<C-p>", require("telescope.builtin").keymaps, "Search keymaps")
-
-		end,
+      require("telescope").load_extension("undo")
+    end,
 	},
 }
