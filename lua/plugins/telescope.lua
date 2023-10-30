@@ -17,7 +17,7 @@ return {
 		},
     keys = {
       { "<leader>bb", "<cmd>Telescope buffers<cr>", { desc = "Find Buffers" }},
-      { "<leader>/", "cmd>Telescope current_buffer_fuzzy_find<cr>", { desc = "Search File" }},
+      { "<leader>/", "<cmd>Telescope current_buffer_fuzzy_find<cr>", { desc = "Search File" }},
 
       { "<leader><leader>f", "<cmd>Telescope find_files<cr>", { desc = "File" }},
       { "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "File" }},
@@ -65,6 +65,12 @@ return {
           },
         },
         extensions = {
+          aerial = {
+            show_nesting = {
+              ["_"] = true,
+              rust = true,
+            },
+          },
           undo = {
             use_delta=true,
             layout_strategy="vertical",
@@ -78,7 +84,7 @@ return {
                 -- installing as a dependency of telescope in it's `requirements` and loading this
                 -- extension from there instead of having the separate plugin definition as outlined
                 -- above.
-                ["<cr>"] = require("telescope-undo.actions").restore,
+                ["<crr"] = require("telescope-undo.actions").restore,
                 ["<S-cr>"] = require("telescope-undo.actions").yank_deletions,
                 ["<C-r>"] = require("telescope-undo.actions").yank_additions,
               },

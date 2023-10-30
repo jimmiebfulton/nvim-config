@@ -21,6 +21,12 @@ return {
               n = { "<cmd>enew<cr>", "New" },
               r = { "<cmd>edit!<cr>", "Revert" },
             },
+            c = {
+              name = "Code",
+              l = {
+                name = "LSP",
+              },
+            },
             d = { "<cmd>bd<cr>", "Delete Buffer" },
             D = { "<cmd>bd!<cr>", "Force Delete Buffer" },
             f = { name = "Find" },
@@ -36,6 +42,7 @@ return {
             },
 
 						j = { name = "Jump" },
+            r = { name = "Refactor" },
 						s = { name = "Search/Show" },
 						l = { name = "LSP" },
 						u = { name = "UI" },
